@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  ScrollView
+  ScrollView,
+  Text
 } from 'react-native';
 import {
   InputWithLabel,
   PickerWithLabel,
   AppButton,
 } from './UI';
+
+import DatePicker from 'react-native-datepicker'
 
 let common = require('./CommonData');
 let SQLite = require('react-native-sqlite-storage');
@@ -20,10 +23,13 @@ export default class CreateScreen extends Component {
   constructor(props) {
     super(props)
 
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
     this.state = {
       title: '',
       language: '03',
-      release_date: '',
+      release_date: date,
     };
 
     this._insert = this._insert.bind(this);
@@ -36,7 +42,7 @@ export default class CreateScreen extends Component {
       tx.executeSql('INSERT INTO movies(title,language,release_date) VALUES(?,?,?)', [
         this.state.title,
         common.getValue(common.languages, this.state.language),
-        this.state.release_date,
+        new Date(this.state.release_date).getTime() / 1000,
       ]);
     });
 
@@ -64,12 +70,29 @@ export default class CreateScreen extends Component {
           orientation={'vertical'}
           textStyle={{fontSize: 24}}
         />
-        <InputWithLabel style={styles.input}
-          label={'Release Date'}
-          value={this.state.release_date}
-          onChangeText={(release_date) => {this.setState({release_date})}}
-          keyboardType={'number-pad'}
-          orientation={'vertical'}
+        <Text>Release Date</Text>
+        <DatePicker
+          style={{width: 200}}
+          date={this.state.release_date}
+          mode="date"
+          placeholder="select date"
+          format="YYYY-MM-DD"
+          minDate="2010-01-01"
+          maxDate="2030-12-31"
+          confirmBtnText="Confirm"
+          cancelBtnText="Cancel"
+          customStyles={{
+            dateIcon: {
+              position: 'absolute',
+              left: 0,
+              top: 4,
+              marginLeft: 0
+            },
+            dateInput: {
+              marginLeft: 36
+            }
+          }}
+          onDateChange={(date) => {this.setState({release_date: date})}}
         />
         <AppButton style={styles.button}
           title={'Save'}

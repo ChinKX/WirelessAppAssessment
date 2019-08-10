@@ -64,7 +64,7 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <FlatList
           data={ this.state.movies }
-          keyExtractor={(item, index) => {
+          keyExtractor={(item) => {
             return item.id.toString();
           }}
           extraData={this.state}
