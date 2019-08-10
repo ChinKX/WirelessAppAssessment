@@ -64,9 +64,6 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <FlatList
           data={ this.state.movies }
-          keyExtractor={(item) => {
-            return item.id.toString();
-          }}
           extraData={this.state}
           showsVerticalScrollIndicator={ true }
           renderItem={({item}) =>
@@ -86,7 +83,9 @@ export default class HomeScreen extends Component {
               </View>
             </TouchableHighlight>
           }
-          keyExtractor={(item) => {item.id.toString()}}
+          keyExtractor={(item, index) => {
+            return item.id.toString();
+          }}
         />
         <FloatingAction
           actions={actions}
