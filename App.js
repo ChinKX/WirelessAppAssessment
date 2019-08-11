@@ -1,9 +1,14 @@
+/*
+∗ Name: Chin Kai Xiang
+∗ Reg. No. : 1603890
+*/
+
 import {
   createStackNavigator,
 } from 'react-navigation';
-import HomeScreen from './HomeScreen';
-import ViewScreen from './ViewScreen';
-import CreateScreen from './CreateScreen';
+import HomeScreen from './screens/HomeScreen';
+import ViewScreen from './screens/ViewScreen';
+import CreateScreen from './screens/CreateScreen';
 
 export default createStackNavigator({
   Home: {

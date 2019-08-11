@@ -1,3 +1,8 @@
+/*
+∗ Name: Chin Kai Xiang
+∗ Reg. No. : 1603890
+*/
+
 import React, { Component, PureComponent } from 'react';
 import {
   StyleSheet,
@@ -10,7 +15,7 @@ import { FloatingAction } from 'react-native-floating-action';
 
 const actions = [{
   text: 'Add',
-  icon: require('./images/baseline_add_white_18dp.png'),
+  icon: require('../images/baseline_add_white_18dp.png'),
   name: 'add',
   position: 1
 }];

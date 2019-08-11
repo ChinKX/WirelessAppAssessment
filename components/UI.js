@@ -1,3 +1,8 @@
+/*
+∗ Name: Chin Kai Xiang
+∗ Reg. No. : 1603890
+*/
+
 import React, { Component } from 'react';
 import {
     Platform,

@@ -1,3 +1,8 @@
+/*
+∗ Name: Chin Kai Xiang
+∗ Reg. No. : 1603890
+*/
+
 exports.getValue = (array, key) => {
   return array.filter((o) => o.key === key)[0].value
 }

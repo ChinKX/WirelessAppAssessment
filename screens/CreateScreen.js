@@ -1,3 +1,8 @@
+/*
+∗ Name: Chin Kai Xiang
+∗ Reg. No. : 1603890
+*/
+
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -8,11 +13,11 @@ import {
   InputWithLabel,
   PickerWithLabel,
   AppButton,
-} from './UI';
+} from '../components/UI';
 
 import DatePicker from 'react-native-datepicker'
 
-let common = require('./CommonData');
+let common = require('../components/CommonData');
 let SQLite = require('react-native-sqlite-storage');
 
 export default class CreateScreen extends Component {

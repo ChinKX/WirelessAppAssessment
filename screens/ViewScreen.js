@@ -1,3 +1,8 @@
+/*
+∗ Name: Chin Kai Xiang
+∗ Reg. No. : 1603890
+*/
+
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -6,7 +11,7 @@ import {
 } from 'react-native';
 import {
   InputWithLabel
-} from './UI';
+} from '../components/UI';
 
 let SQLite = require('react-native-sqlite-storage');
 
